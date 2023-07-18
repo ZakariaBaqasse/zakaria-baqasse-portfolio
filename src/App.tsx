@@ -1,8 +1,14 @@
+import { Route, Routes } from "react-router"
+import HomePage from "./pages/home"
+import NotFound from "./pages/not-found"
 
 function App() {
   return (
     <>
-     <h1 className="text-6xl">Hello Portfolio</h1>
+     <Routes>
+      <Route path="/" element={<HomePage/>}/>
+      <Route path="*" element={<NotFound/>}/>
+     </Routes>
     </>
   )
 }

@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (max-width: 768px) {
+  .menu> li{
+    @apply mb-2;
+  }
+  .hidden_nav{
+    @apply hidden;
+  }
+}
+
+.menu> li{
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+}
+
+    
+.menu> li:hover{
+    border-bottom: 2px solid #13C2B5;
+    transform: translateY(-2px);
+    transition: transform ease-out 300ms;
+}
+
+.social-icons{
+    @apply text-primary text-3xl mr-5 hover:text-white transition-colors ease-out duration-300 cursor-pointer tracking-wide;
+}
+
+.intro-paragraph{
+    max-width: 30rem;
+}
+
+.intro-heading{
+    @apply text-white font-headings text-5xl md:text-6xl pt-20 pl-10 md:pt-40 md:pl-20;
+}
+
