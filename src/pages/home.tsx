@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import MeetMe from "../sections/meet-me-section";
 
 const NavBar = ()=>{
     const [isOpened, setIsOpened] = useState(false);
@@ -36,6 +37,7 @@ const HomePage = ()=>{
     <>
       <NavBar/>
       <Hero/>
+      <MeetMe/>
     </>
   )
 }

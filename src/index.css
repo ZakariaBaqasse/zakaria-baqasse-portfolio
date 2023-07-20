@@ -10,7 +10,11 @@
     @apply mb-2;
   }
   .hidden_nav{
-    @apply hidden;
+    opacity: 0;
+    height: 0;
+  }
+  .menu{
+    transition: all ease-out 300ms;
   }
 }
 
