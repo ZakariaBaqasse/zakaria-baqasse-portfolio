@@ -30,12 +30,12 @@ const Links = ()=>{
 
 const Hero = ()=> {
   return (
-    <div className="bg-secondary w-full h-fit">
+    <section id="hero-section" className="bg-secondary w-full min-h-screen">
         <ParticlesBackground/>
         <Intro/>
         <Links/>
         <p className="text-gray-300 text-justify intro-paragraph font-paragraphs font-light text-base pt-10 px-10 md:pl-20 pb-20 md:pb-28">I love challenging myself 💪, I embrace a growth mindset and actively seek new knowledge 👨‍🎓. And yeah I like anime 😻</p>
-    </div>
+    </section>
   )
 }
 

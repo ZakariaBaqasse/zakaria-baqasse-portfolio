@@ -42,3 +42,7 @@
     @apply text-white font-headings text-5xl md:text-6xl pt-20 pl-10 md:pt-40 md:pl-20;
 }
 
+.carrer-card{
+  @apply md:grid md:grid-cols-3 md:w-4/5 hover:bg-gray-300 text-secondary hover:shadow-md hover:translate-y-1 transition-all ease-out duration-300 mb-12 p-3 hover:rounded-md;
+}
+

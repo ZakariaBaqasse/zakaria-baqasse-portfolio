@@ -5,7 +5,7 @@ import { MY_SKILLS } from "../utils/const";
 const MeetMe = () => {
   const isSmallScreen = window.innerWidth < 768;
   return (
-    <div id="MeetMe" className="w-full h-screen">
+    <div id="MeetMe" className="w-full min-h-screen ">
       <StyledTitle word1="Meet" word2="Me" />
       <div className="md:grid md:grid-cols-3 md:gap-14 relative z-10 mx-3 lg:mx-32">
         <div className="flex items-center col-span-1 rounded-md overflow-hidden shadow-lg w-fit m-auto mb-7 md:m-0 h-fit">
