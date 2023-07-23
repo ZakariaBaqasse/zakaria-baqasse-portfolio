@@ -16,7 +16,7 @@ type CarrerCardProps = {
 
 const CarrerCard = memo(({ carrer }:CarrerCardProps) => {
    return(
-    <div className='carrer-card'>
+    <div className='carrer-card glass-bg'>
         <div className='col-span-1 font-headings'>
             <p className='text-lg text-gray-600 mb-4 md:mb-0'>{carrer.startDate} - {carrer.endDate}</p>
         </div>

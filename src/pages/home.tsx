@@ -5,6 +5,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import MeetMe from "../sections/meet-me-section";
 import Education from "../sections/education-section";
+import Projects from "../sections/projects-section";
 
 const NavBar = ()=>{
     const [isOpened, setIsOpened] = useState(false);
@@ -26,7 +27,6 @@ const NavBar = ()=>{
                 <li><NavLink to="#Education">My Education</NavLink></li>
                 <li><NavLink to="#Projects">My Projects</NavLink></li>
                 <li><NavLink to="#Experience">My Experience</NavLink></li>
-                <li><NavLink to="#Certificates">My Certificates</NavLink></li>
                 <li><NavLink to="#Contact">Contact Me</NavLink></li>
             </ul>
         </nav>
@@ -40,6 +40,7 @@ const HomePage = ()=>{
       <Hero/>
       <MeetMe/>
       <Education/>
+      <Projects/>
     </>
   )
 }
