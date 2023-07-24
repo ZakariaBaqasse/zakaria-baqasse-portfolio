@@ -1,8 +1,5 @@
-type StyledTitleProps = {
-  word1: string;
-  word2: string;
-  textColor?: string;
-};
+import { StyledTitleProps } from "../utils/types";
+
 
 const StyledTitle = ({ word1, word2,textColor="text-secondary" }: StyledTitleProps) => {
   return (

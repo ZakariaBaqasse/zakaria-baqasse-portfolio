@@ -1,9 +1,11 @@
 import StyledTitle from "../shared-components/styled-title";
 import supabase from "../utils/supabase-client";
 import { useQuery } from "@tanstack/react-query";
-import { Project, ProjectCard } from "../shared-components/project-card";
-import { NavLink } from "react-router-dom";
+import { ProjectCard } from "../shared-components/project-card";
 import LoadingSpinner from "../shared-components/loading-spinner";
+import NavigateButton from "../shared-components/navigate-button";
+import { useEffect } from "react";
+import { Project, Props } from "../utils/types";
 
 const fetchRecentProjects = async () => {
   const { data, error } = await supabase
@@ -15,19 +17,19 @@ const fetchRecentProjects = async () => {
   return data as Project[];
 };
 
-type CustomError = {
-  message: string | undefined;
-};
-
-
-
-const Projects = () => {
-  const { data,isError, isLoading } = useQuery<Project[], CustomError>(
+const Projects = ({location,passedRef}:Props) => {
+  const { data,isError, isLoading } = useQuery<Project[]>(
     ["recentProjects"],
     fetchRecentProjects
   );
+  useEffect(()=>{
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if(location.state && location.state.scrollToProjects){
+      passedRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+  },[location.state,passedRef]);
   return (
-    <section id="Projects" className="text-secondary min-h-screen">
+    <section id="Projects" className="text-secondary min-h-screen" ref={passedRef}>
       <StyledTitle word1="My" word2="Projects" />
       {isLoading && <LoadingSpinner />}
       {isError && (
@@ -38,13 +40,7 @@ const Projects = () => {
           return <ProjectCard key={project.id} project={project} />;
         })}
       </div>
-      <div className="m-auto w-fit my-6">
-      <NavLink to="/projects">
-        <button className="text-secondary font-headings capitalize border-2 border-secondary rounded-full hover:bg-secondary hover:text-white text-xl px-3 py-2 transition-all ease-out duration-300">
-            all projects
-        </button>
-        </NavLink>
-      </div>
+      <NavigateButton label="all projects" linkTo="/projects"/>
     </section>
   );
 };

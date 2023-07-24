@@ -3,16 +3,12 @@ import {
   faXmark,
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import { Project } from "./project-card";
 import ReactDOM from "react-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { TechStackChip } from "./chip";
+import { ModalProps } from "../utils/types";
 
-type ModalProps = {
-  project: Project;
-  isOpen: boolean;
-  onClose: () => void;
-};
+
 
 const Modal = ({ project, isOpen, onClose }: ModalProps) => {
   if (!isOpen) return null;

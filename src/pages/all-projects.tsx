@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { Project, ProjectCard } from "../shared-components/project-card";
+import { ProjectCard } from "../shared-components/project-card";
 import supabase from "../utils/supabase-client";
 import LoadingSpinner from "../shared-components/loading-spinner";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import ParticlesBackground from "../sections/particlests/particles-background";
+import { Project } from "../utils/types";
 
 const fetchAllProjects = async () => {
   const { data, error } = await supabase.from("projects").select("*");
@@ -21,12 +22,12 @@ const AllProjects = () => {
   return (
     <section id="all-projects" className="text-secondary min-h-screen">
       <ParticlesBackground />
-      <NavLink to="/">
+      <Link to="/" state={{scrollToProjects: true,scrollToExperience:true}}>
         <button className="text-secondary font-headings capitalize border-2 border-secondary rounded-full hover:bg-secondary hover:text-white text-xl px-3 py-2 transition-all ease-out duration-300 my-4 ml-3">
           <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
           Home Page
         </button>
-      </NavLink>
+      </Link>
       {isLoading && <LoadingSpinner />}
       {isError && (
         <p className="text-xl m-auto text-red-700 text-center">

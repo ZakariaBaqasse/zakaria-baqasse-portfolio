@@ -2,21 +2,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { TechStackChip } from "./chip";
 import { useReducer } from "react";
 import Modal from "./modal";
+import { ProjectCardProps } from "../utils/types";
 
-export interface Project {
-  id: number;
-  project_title: string;
-  project_description: string;
-  project_thumbnail: string;
-  project_url: string;
-  project_scope: string;
-  project_techstack: string;
-  createdAt: string;
-}
 
-export type ProjectCardProps = {
-  project: Project;
-};
 
 enum ActionType {
   OPEN = "OPEN",

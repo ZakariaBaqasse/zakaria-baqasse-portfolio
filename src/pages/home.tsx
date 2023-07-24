@@ -1,11 +1,12 @@
 import Hero from "../sections/hero-section";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MeetMe from "../sections/meet-me-section";
 import Education from "../sections/education-section";
 import Projects from "../sections/projects-section";
+import Experiences from "../sections/experiences-section";
 
 const NavBar = ()=>{
     const [isOpened, setIsOpened] = useState(false);
@@ -23,24 +24,28 @@ const NavBar = ()=>{
                 </div>
             </NavLink>
             <ul className={`flex md:justify-evenly font-headings font-semibold lowercase flex-col items-center md:flex-row menu ${!isOpened?'hidden_nav':''}`}>
-                <li><NavLink to="#MeetMe">Meet Me</NavLink></li>
-                <li><NavLink to="#Education">My Education</NavLink></li>
-                <li><NavLink to="#Projects">My Projects</NavLink></li>
-                <li><NavLink to="#Experience">My Experience</NavLink></li>
-                <li><NavLink to="#Contact">Contact Me</NavLink></li>
+                <li><a href="#MeetMe">Meet Me</a></li>
+                <li><a href="#Education">My Education</a></li>
+                <li><a href="#Projects">My Projects</a></li>
+                <li><a href="#Experience">My Experience</a></li>
+                <li><a href="#Contact">Contact Me</a></li>
             </ul>
         </nav>
     )
 }
 
 const HomePage = ()=>{
+    const location = useLocation();
+    const projectRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
   return(
     <>
       <NavBar/>
       <Hero/>
       <MeetMe/>
       <Education/>
-      <Projects/>
+      <Projects location={location} passedRef={projectRef}/>
+      <Experiences location={location} passedRef={experienceRef}/>
     </>
   )
 }
