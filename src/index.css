@@ -233,3 +233,19 @@ html{
   backdrop-filter: blur(15px);
 }
 
+.form-input{
+  @apply border-2 border-gray-300 rounded-lg w-full p-3 mb-4 outline-none focus:border-primary z-10;
+}
+
+.form-area{
+  @apply border-2 h-40 border-gray-300 rounded-lg w-full p-3 mb-4 outline-none focus:border-primary z-10;
+}
+
+.submit-button{
+  @apply bg-primary text-white font-bold py-2 px-4 rounded-full w-full transition-all ease-out duration-300 z-10 hover:bg-blend-darken;
+}
+
+.submit-button:disabled{
+  @apply bg-gray-300 text-white font-bold py-2 px-4 rounded-full w-full transition-all ease-out duration-300 z-10;
+}
+

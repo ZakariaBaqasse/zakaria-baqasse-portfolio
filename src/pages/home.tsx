@@ -7,6 +7,7 @@ import MeetMe from "../sections/meet-me-section";
 import Education from "../sections/education-section";
 import Projects from "../sections/projects-section";
 import Experiences from "../sections/experiences-section";
+import Contact from "../sections/contact-section";
 
 const NavBar = ()=>{
     const [isOpened, setIsOpened] = useState(false);
@@ -46,6 +47,7 @@ const HomePage = ()=>{
       <Education/>
       <Projects location={location} passedRef={projectRef}/>
       <Experiences location={location} passedRef={experienceRef}/>
+      <Contact/>
     </>
   )
 }
