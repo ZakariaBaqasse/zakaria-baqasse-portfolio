@@ -8,8 +8,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { TechStackChip } from "./chip";
 import { ModalProps } from "../utils/types";
 
-
-
 const Modal = ({ project, isOpen, onClose }: ModalProps) => {
   if (!isOpen) return null;
   return ReactDOM.createPortal(
@@ -17,15 +15,22 @@ const Modal = ({ project, isOpen, onClose }: ModalProps) => {
       <div className="popup-overlay" onClick={onClose}></div>
       <div className="  w-3/4 h-5/6 bg-white rounded-md z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-y-scroll">
         <div className="flex justify-between mx-4 my-3 md:my-5">
-          <button className="rounded-md bg-white hover:bg-primary hover:text-white transition-all ease-out duration-300 px-2 py-1">
-            <a href={project.project_url} target="_blank">
+          <a
+            href={
+              project.project_url.startsWith("http")
+                ? project.project_url
+                : `https://${project.project_url}`
+            }
+            target="_blank"
+          >
+            <button className="rounded-md bg-white hover:bg-primary hover:text-white transition-all ease-out duration-300 px-2 py-1">
               Try it
               <FontAwesomeIcon
                 icon={faUpRightFromSquare}
                 className="ml-2 text-xl text-gray-500 hover:text-white"
               />
-            </a>
-          </button>
+            </button>
+          </a>
           <FontAwesomeIcon
             icon={faXmark}
             className="text-2xl text-secondary cursor-pointer"
@@ -46,16 +51,16 @@ const Modal = ({ project, isOpen, onClose }: ModalProps) => {
             <LazyLoadImage
               className="rounded-md my-3 h-2/3"
               src={project.project_thumbnail}
-              />
+            />
           </div>
           <div className=" col-span-1 ">
             <h3 className="font-headings text-xl font-medium text-secondary text-center my-3">
-                Tech Stack: ⚙
+              Tech Stack: ⚙
             </h3>
             <div className="flex lg:justify-start justify-evenly">
-                {project.project_techstack.split(",").map((tech, index) => {
-                    return <TechStackChip key={`${tech}_${index}`} tech={tech} />;
-                })}
+              {project.project_techstack.split(",").map((tech, index) => {
+                return <TechStackChip key={`${tech}_${index}`} tech={tech} />;
+              })}
             </div>
           </div>
         </div>
