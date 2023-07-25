@@ -50,3 +50,8 @@ export type StyledTitleProps = {
   word2: string;
   textColor?: string;
 };
+
+export enum SocialLinkLocation{
+  INTRO = "intro",
+  FOOTER = "footer"
+}

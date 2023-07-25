@@ -20,6 +20,22 @@
 
 html{
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #121e27 #13c2b5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #13c2b5; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #121e27; 
 }
 
 .menu > li {
@@ -242,10 +258,13 @@ html{
 }
 
 .submit-button{
-  @apply bg-primary text-white font-bold py-2 px-4 rounded-full w-full transition-all ease-out duration-300 z-10 hover:bg-blend-darken;
+  @apply bg-primary text-white font-bold py-2 px-4 rounded-full w-full transition-all ease-out duration-300 z-10 mb-4;
 }
 
 .submit-button:disabled{
   @apply bg-gray-300 text-white font-bold py-2 px-4 rounded-full w-full transition-all ease-out duration-300 z-10;
 }
 
+.footer-paragraph span{
+  @apply text-white font-semibold opacity-100;
+}

@@ -8,6 +8,7 @@ import Education from "../sections/education-section";
 import Projects from "../sections/projects-section";
 import Experiences from "../sections/experiences-section";
 import Contact from "../sections/contact-section";
+import Footer from "../sections/footer";
 
 const NavBar = ()=>{
     const [isOpened, setIsOpened] = useState(false);
@@ -48,6 +49,7 @@ const HomePage = ()=>{
       <Projects location={location} passedRef={projectRef}/>
       <Experiences location={location} passedRef={experienceRef}/>
       <Contact/>
+      <Footer/>
     </>
   )
 }

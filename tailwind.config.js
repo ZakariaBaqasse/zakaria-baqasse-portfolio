@@ -13,7 +13,10 @@ export default {
       fontFamily:{
         headings:["Roboto"],
         paragraphs:["Merriweather"]
-      }
+      },
+      minHeight:{
+        "screen-1/3":"33vh",
+      },
     },
   },
   plugins: [],
