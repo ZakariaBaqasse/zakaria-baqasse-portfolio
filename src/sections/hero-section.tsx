@@ -17,7 +17,7 @@ const Intro = ()=>{
 
 const Hero = ()=> {
   return (
-    <section id="hero-section" className="bg-secondary w-full min-h-screen">
+    <section id="hero-section" className="bg-secondary w-full section-sizing">
         <ParticlesBackground/>
         <Intro/>
         <Links location={SocialLinkLocation.INTRO}/>

@@ -5,7 +5,7 @@ import { MY_SKILLS } from "../utils/const";
 const MeetMe = () => {
   const isSmallScreen = window.innerWidth < 768;
   return (
-    <section id="MeetMe" className="w-full min-h-screen ">
+    <section id="MeetMe" className="w-full section-sizing ">
       <StyledTitle word1="Meet" word2="Me" />
       <div className="md:grid md:grid-cols-3 md:gap-14 relative z-10 mx-3 lg:mx-32">
         <div className="flex items-center col-span-1 rounded-md overflow-hidden shadow-lg w-fit m-auto mb-7 md:m-0 h-fit">
@@ -33,7 +33,7 @@ const MeetMe = () => {
             <h4 className="text-xl font-semibold font-headings">
               I find joy in crafting and building projects that excite me 👨‍💻
             </h4>
-            <p className=" mt-8 ">
+            <p className=" mt-8 text-base md:text-lg">
               As a software engineer, I immerse myself in the world of software
               development, constantly honing my skills and embarking on new
               projects. My passion for learning allows me to adapt quickly and

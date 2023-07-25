@@ -18,6 +18,10 @@
   }
 }
 
+.section-sizing{
+  @apply min-h-screen md:min-h-fit lg:min-h-screen;
+}
+
 html{
   scroll-behavior: smooth;
   scrollbar-width: thin;

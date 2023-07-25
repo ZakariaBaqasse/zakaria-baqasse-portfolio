@@ -47,7 +47,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className="card-content">
         <h1 className="card-title">{project.project_title}</h1>
         <h2 className="card-sub-title pb-5">{project.project_scope}</h2>
-        <div className="flex justify-start">{renderTechStack()}</div>
+        <div className="flex justify-start flex-wrap">{renderTechStack()}</div>
       </div>
       <div className="m-auto w-fit absolute bottom-9 left-1/2 -translate-x-1/2">
         <button className="bg-primary text-white font-headings text-lg px-3 py-2 m-auto rounded-full" onClick={()=>dispatch({type:ActionType.OPEN})}>

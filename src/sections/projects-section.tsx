@@ -29,7 +29,7 @@ const Projects = ({location,passedRef}:Props) => {
     }
   },[location.state,passedRef]);
   return (
-    <section id="Projects" className="text-secondary min-h-screen" ref={passedRef}>
+    <section id="Projects" className="text-secondary section-sizing" ref={passedRef}>
       <StyledTitle word1="My" word2="Projects" />
       {isLoading && <LoadingSpinner />}
       {isError && (

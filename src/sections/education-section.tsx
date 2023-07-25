@@ -6,7 +6,7 @@ import { EDUCATIONS } from "../utils/const";
 
 const Education = () => {
     return(
-        <section id="Education" className="text-secondary min-h-screen">
+        <section id="Education" className="text-secondary section-sizing">
            <StyledTitle word1="My" word2="Education"/>
            <div className="w-4/5 mx-auto mb-12">
            {EDUCATIONS.map((education)=>{

@@ -29,7 +29,7 @@ const Experiences = ({location,passedRef}:Props) => {
     fetchRecentExperiences
   );
   return (
-    <section id="Experience" className="min-h-screen" ref={passedRef}>
+    <section id="Experience" className="section-sizing" ref={passedRef}>
       <StyledTitle word1="My" word2="Experience" />
       {isLoading && <LoadingSpinner />}
       {isError && (

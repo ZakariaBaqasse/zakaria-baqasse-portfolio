@@ -25,7 +25,7 @@ const Contact = () => {
   },[state.succeeded])
 
   return (
-    <section id="Contact" className="min-h-screen">
+    <section id="Contact" className="section-sizing">
       <StyledTitle word1="Contact" word2="Me" />
       <h3 className="text-center font-headings text-xl font-semibold my-3">Let's work together!</h3>
       <form

@@ -13,7 +13,7 @@ const Modal = ({ project, isOpen, onClose }: ModalProps) => {
   return ReactDOM.createPortal(
     <>
       <div className="popup-overlay" onClick={onClose}></div>
-      <div className="  w-3/4 h-5/6 bg-white rounded-md z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-y-scroll">
+      <div className=" w-11/12 md:w-3/4 h-5/6 bg-white rounded-md z-50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-y-scroll">
         <div className="flex justify-between mx-4 my-3 md:my-5">
           <a
             href={
@@ -45,7 +45,7 @@ const Modal = ({ project, isOpen, onClose }: ModalProps) => {
         </h2>
         <div className="lg:grid lg:grid-cols-3 mx-6 lg:gap-5">
           <div className="lg:col-span-2 flex flex-col items-center">
-            <p className=" p-3 font-paragraphs text-base text-secondary inset-3 bg-gray-100 text-justify rounded-md">
+            <p className=" p-3 font-paragraphs text-sm md:text-base text-secondary inset-3 bg-gray-100 text-justify rounded-md">
               {project.project_description}
             </p>
             <LazyLoadImage
@@ -57,7 +57,7 @@ const Modal = ({ project, isOpen, onClose }: ModalProps) => {
             <h3 className="font-headings text-xl font-medium text-secondary text-center my-3">
               Tech Stack: ⚙
             </h3>
-            <div className="flex lg:justify-start justify-evenly">
+            <div className="flex flex-wrap lg:justify-start justify-evenly">
               {project.project_techstack.split(",").map((tech, index) => {
                 return <TechStackChip key={`${tech}_${index}`} tech={tech} />;
               })}
