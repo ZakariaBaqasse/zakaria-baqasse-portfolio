@@ -10,7 +10,7 @@ const MeetMe = () => {
       <div className="md:grid md:grid-cols-3 md:gap-14 relative z-10 mx-3 lg:mx-32">
         <div className="flex items-center col-span-1 rounded-md overflow-hidden shadow-lg w-fit m-auto mb-7 md:m-0 h-fit">
           <LazyLoadImage
-            src="/images/profile.jpg"
+            src="/images/profile.JPG"
             alt="Zakaria BAQASSE photo"
             width={isSmallScreen ? 175 : 350}
             height={isSmallScreen ? 250 : 500}
